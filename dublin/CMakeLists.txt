@@ -99,6 +99,21 @@ option(DUBLIN_BUILD_DOCS "Build documentation" "${LLVM_BUILD_DOCS}")
 option(DUBLIN_INCLUDE_DOCS "Generate build targets for tests" "${LLVM_INCLUDE_DOCS}")
 
 
+########################
+# System Introspection #
+########################
+
+
+
+
+#####################
+# Build Preparation #
+#####################
+
+configure_file(cmake/config.h.cmake.in config.h)
+#add_custom_target(dublin)
+
+
 ###################
 # Build Artifacts #
 ###################

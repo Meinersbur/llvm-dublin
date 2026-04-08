@@ -85,6 +85,30 @@
       "cacheVariables": {
         "LLVM_USE_SANITIZER": "Address"
       }
+    },
+    {
+      "name": "Configure preset using toolchain file",
+      "displayName": "Configure preset using toolchain file",
+      "description": "Sets Ninja generator, build and install directory",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
+      }
+    },
+    {
+      "name": "dublin",
+      "description": "libdublin Tutorial",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/../release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/../release-install",
+        "LLVM_ENABLE_RUNTIMES" : "dublin"
+      }
     }
-  ]
+  ],
+  "buildPresets": [  ]
 }
