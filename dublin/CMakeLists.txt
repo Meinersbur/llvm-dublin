@@ -76,6 +76,9 @@ option(DUBLIN_ENABLE_SHARED "Build libdublin.so" ON)
 option(DUBLIN_BUILD_EXAMPLES "Build examples" OFF)
 option(DUBLIN_INCLUDE_EXAMPLES "Generate build targets for tests" ON)
 
+option(DUBLIN_INCLUDE_TESTS "Generate build targets for tests" "${LLVM_INCLUDE_TESTS}")
+set(DUBLIN_TEST_C_COMPILER "${CMAKE_C_COMPILER}" CACHE PATH "Compiler to use for end-to-end tests")
+
 
 ###################
 # Build Artifacts #
@@ -87,3 +90,9 @@ add_subdirectory(include)
 if (DUBLIN_INCLUDE_EXAMPLES)
   add_subdirectory(examples)
 endif ()
+
+if (DUBLIN_INCLUDE_TESTS)
+  add_subdirectory(test)
+else ()
+  add_custom_target(check-dublin)
+endif()
