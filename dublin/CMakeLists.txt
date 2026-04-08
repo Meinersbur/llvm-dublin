@@ -28,8 +28,20 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 
+#################
+# Build Options #
+#################
+
+option(DUBLIN_BUILD_EXAMPLES "Build examples" OFF)
+option(DUBLIN_INCLUDE_EXAMPLES "Generate build targets for tests" ON)
+
+
 ###################
 # Build Artifacts #
 ###################
 
 add_subdirectory(lib)
+
+if (DUBLIN_INCLUDE_EXAMPLES)
+  add_subdirectory(examples)
+endif ()
