@@ -28,6 +28,19 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 
+############################
+# Build Mode Introspection #
+############################
+
+if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+  message(FATAL_ERROR "Standalone build mode not supported")
+endif ()
+
+if (NOT LLVM_RUNTIMES_BUILD)
+  message(FATAL_ERROR "Runtimes build required")
+endif ()
+
+
 #################
 # Build Options #
 #################
