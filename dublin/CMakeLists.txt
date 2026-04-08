@@ -28,16 +28,8 @@ list(APPEND CMAKE_MODULE_PATH
 )
 
 
-##################
-# Build Commands #
-##################
+###################
+# Build Artifacts #
+###################
 
-add_custom_target(dublin
-  COMMAND "${CMAKE_COMMAND}" -E echo "Executing the 'dublin' target"
-  COMMENT "Echoing 'dublin'"
-)
-
-add_custom_target(check-dublin
-  COMMAND "${CMAKE_COMMAND}" -E echo "Executing the 'check-dublin' target"
-  COMMENT "Echoing 'check-dublin'"
-)
+add_subdirectory(lib)
