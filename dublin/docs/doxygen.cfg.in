@@ -1,0 +1,26 @@
+PROJECT_NAME           = "Dublin library"
+PROJECT_NUMBER         = @PACKAGE_VERSION@
+PROJECT_LOGO           = @CMAKE_CURRENT_SOURCE_DIR@/_themes/llvm-theme/static/logo.png
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doxygen
+GENERATE_LATEX         = NO
+GENERATE_HTML          = YES
+
+HAVE_DOT               = YES
+DOT_PATH               = @LLVM_PATH_DOT@
+DOT_IMAGE_FORMAT       = svg
+DOT_MULTI_TARGETS      = YES
+
+INPUT                  = @DUBLIN_SOURCE_DIR@/lib                               \
+                         @DUBLIN_SOURCE_DIR@/include                           \
+                         @DUBLIN_SOURCE_DIR@/examples                          \
+                         @CMAKE_CURRENT_SOURCE_DIR@/doxygen-mainpage.dox
+CASE_SENSE_NAMES       = YES
+STRIP_FROM_PATH        = @DUBLIN_SOURCE_DIR@
+
+EXTRACT_ALL            = YES
+RECURSIVE              = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+WARN_IF_UNDOCUMENTED   = NO
+
+STRIP_CODE_COMMENTS    = NO

@@ -14,6 +14,8 @@
 #include "dublin/Dublin/dublin.h"
 #include <stdio.h>
 
+
+/// Implements "Hello World" in Irish.
 void _dublin_hello_world() {
   puts("Dia daoibh, a dhomhain!\n");
 }
