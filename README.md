@@ -1,44 +1,24 @@
-# The LLVM Compiler Infrastructure
+# The Dublin Tutorial
 
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/llvm/llvm-project/badge)](https://securityscorecards.dev/viewer/?uri=github.com/llvm/llvm-project)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8273/badge)](https://www.bestpractices.dev/projects/8273)
-[![libc++](https://github.com/llvm/llvm-project/actions/workflows/libcxx-build-and-test.yaml/badge.svg?branch=main&event=schedule)](https://github.com/llvm/llvm-project/actions/workflows/libcxx-build-and-test.yaml?query=event%3Aschedule)
+This is a tutorial demonstrating the LLVM_ENABLE_RUNTIMES mechanism by adding
+a new runtime.
 
-Welcome to the LLVM project!
+The Steps:
 
-This repository contains the source code for LLVM, a toolkit for the
-construction of highly optimized compilers, optimizers, and run-time
-environments.
-
-The LLVM project has multiple components. The core of the project is
-itself called "LLVM". This contains all of the tools, libraries, and header
-files needed to process intermediate representations and convert them into
-object files. Tools include an assembler, disassembler, bitcode analyzer, and
-bitcode optimizer.
-
-C-like languages use the [Clang](https://clang.llvm.org/) frontend. This
-component compiles C, C++, Objective-C, and Objective-C++ code into LLVM bitcode
--- and from there into object files, using LLVM.
-
-Other components include:
-the [libc++ C++ standard library](https://libcxx.llvm.org),
-the [LLD linker](https://lld.llvm.org), and more.
-
-## Getting the Source Code and Building LLVM
-
-Consult the
-[Getting Started with LLVM](https://llvm.org/docs/GettingStarted.html#getting-the-source-code-and-building-llvm)
-page for information on building and running LLVM.
-
-For information on how to contribute to the LLVM project, please take a look at
-the [Contributing to LLVM](https://llvm.org/docs/Contributing.html) guide.
-
-## Getting in touch
-
-Join the [LLVM Discourse forums](https://discourse.llvm.org/), [Discord
-chat](https://discord.gg/xS7Z362),
-[LLVM Office Hours](https://llvm.org/docs/GettingInvolved.html#office-hours) or
-[Regular sync-ups](https://llvm.org/docs/GettingInvolved.html#online-sync-ups).
-
-The LLVM project has adopted a [code of conduct](https://llvm.org/docs/CodeOfConduct.html) for
-participants to all modes of communication within the project.
+ * [Setup](https://github.com/Meinersbur/llvm-dublin/compare/main..dublin-0-main)
+ * [Step 1: Register with the LLVM Build System](https://github.com/Meinersbur/llvm-dublin/compare/dublin-0-main..dublin-1-basic)
+ * [Step 2: Build a Library Artifact](https://github.com/Meinersbur/llvm-dublin/compare/dublin-1-basic..dublin-2-library)
+ * [Step 3: An Example that uses the Library](https://github.com/Meinersbur/llvm-dublin/compare/dublin-2-library..dublin-3-example)
+ * [Step 4: Build Modes](https://github.com/Meinersbur/llvm-dublin/compare/dublin-3-example..dublin-4-modes)
+ * [Step 5: CMake Cache Files](https://github.com/Meinersbur/llvm-dublin/compare/dublin-4-modes..dublin-5-cachefiles)
+ * [Step 6: Artifact Output Location](https://github.com/Meinersbur/llvm-dublin/compare/dublin-5-cachefiles..dublin-6-location)
+ * [Step 7: Installation](https://github.com/Meinersbur/llvm-dublin/compare/dublin-6-location..dublin-7-install)
+ * [Step 8: Shared and Static Libraries](https://github.com/Meinersbur/llvm-dublin/compare/dublin-7-install..dublin-8-shared)
+ * [Step 9: Regression Tests](https://github.com/Meinersbur/llvm-dublin/compare/dublin-8-shared..dublin-9-test)
+ * [Step 10: Unittests](https://github.com/Meinersbur/llvm-dublin/compare/dublin-9-test..dublin-10-unittest)
+ * [Step 11: Sphinx Docs](https://github.com/Meinersbur/llvm-dublin/compare/dublin-10-unittest..dublin-11-docs)
+ * [Step 12: Doxygen Docs](https://github.com/Meinersbur/llvm-dublin/compare/dublin-11-docs..dublin-12-doxygen)
+ * [Step 13: Cross-Compilation](https://github.com/Meinersbur/llvm-dublin/compare/dublin-12-doxygen..dublin-13-cross)
+ * [Step 14: Accelerator Offloading](https://github.com/Meinersbur/llvm-dublin/compare/dublin-13-cross..dublin-14-offload)
+ * [Step 15: Depending on Other LLVM Libraries / C++](https://github.com/Meinersbur/llvm-dublin/compare/dublin-14-offload..dublin-15-deps)
+ * [Bonus](https://github.com/Meinersbur/llvm-dublin/compare/dublin-15-deps..dublin)
