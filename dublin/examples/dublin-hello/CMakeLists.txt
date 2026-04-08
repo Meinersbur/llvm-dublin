@@ -11,5 +11,5 @@ set(LLVM_BUILD_EXAMPLES "${DUBLIN_BUILD_EXAMPLES}")
 add_llvm_example(dublin-hello
   dublin-hello.c
 )
-target_link_libraries(dublin-hello PRIVATE dublin)
+target_link_libraries(dublin-hello PRIVATE dublin.default)
 target_include_directories(dublin-hello PRIVATE "${DUBLIN_SOURCE_DIR}/include")

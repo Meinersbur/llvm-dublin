@@ -6,16 +6,8 @@
 #
 #===------------------------------------------------------------------------===#
 
-add_library(dublin
-    dublin.c
-  )
+include(AddDublin)
 
-target_include_directories(dublin PUBLIC "${DUBLIN_SOURCE_DIR}/include")
-set_target_properties(dublin
-  PROPERTIES
-    ARCHIVE_OUTPUT_DIRECTORY "${DUBLIN_OUTPUT_RESOURCE_LIB_DIR}"
-)
-
-install(TARGETS dublin
-  ARCHIVE DESTINATION "${DUBLIN_INSTALL_RESOURCE_LIB_PATH}"
+add_dublin_library(dublin STATIC SHARED
+  dublin.c
 )

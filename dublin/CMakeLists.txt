@@ -69,6 +69,10 @@ cmake_path(NORMAL_PATH DUBLIN_INSTALL_RESOURCE_LIB_PATH)
 # Build Options #
 #################
 
+option(DUBLIN_ENABLE_STATIC "Build libdublin.a" ON)
+option(DUBLIN_ENABLE_SHARED "Build libdublin.so" ON)
+
+
 option(DUBLIN_BUILD_EXAMPLES "Build examples" OFF)
 option(DUBLIN_INCLUDE_EXAMPLES "Generate build targets for tests" ON)
 
