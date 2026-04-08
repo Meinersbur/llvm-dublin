@@ -11,3 +11,7 @@ add_library(dublin
   )
 
 target_include_directories(dublin PUBLIC "${DUBLIN_SOURCE_DIR}/include")
+set_target_properties(dublin
+  PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY "${DUBLIN_OUTPUT_RESOURCE_LIB_DIR}"
+)
