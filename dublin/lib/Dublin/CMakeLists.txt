@@ -9,7 +9,7 @@
 include(AddDublin)
 
 add_dublin_library(dublin STATIC SHARED
-  dublin.c
+  dublin.cpp
 )
 
 if (TARGET dublin.static )

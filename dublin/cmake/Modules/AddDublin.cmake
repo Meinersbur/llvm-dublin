@@ -132,6 +132,21 @@ function (add_dublin_library name)
     endif ()
   endforeach ()
 
+
+if (TARGET cxx_static)
+  foreach (tgtname IN LISTS libtargets)
+    target_link_options(${tgtname} PRIVATE -nostdlib++)
+  endforeach ()
+
+  foreach (tgtname IN LISTS alltargets)
+    target_link_libraries(${tgtname} PRIVATE cxx_static)
+  endforeach ()
+
+  foreach (tgtname IN LISTS srctargets)
+      target_compile_options(${tgtname} PRIVATE -nostdinc++)
+  endforeach ()
+endif ()
+
   foreach (tgtname IN LISTS libtargets)
       set_target_properties(${tgtname}
         PROPERTIES

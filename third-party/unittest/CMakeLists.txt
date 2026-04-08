@@ -156,6 +156,12 @@ function (gtest_remove_dylib_from_link_interface target)
   endif()
 endfunction()
 
+if (TARGET cxx_static)
+  target_link_libraries("${gtest_name}" PUBLIC cxx_static)
+  target_link_options("${gtest_name}" PUBLIC -nostdlib++)
+  target_compile_options("${gtest_name}" PUBLIC -nostdinc++)
+endif ()
+
 if (NOT LLVM_RUNTIMES_BUILD)
   gtest_remove_dylib_from_link_interface("${gtest_name}")
   gtest_remove_dylib_from_link_interface("${gtest_name}_main")

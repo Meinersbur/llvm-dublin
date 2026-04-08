@@ -12,12 +12,10 @@
 //===----------------------------------------------------------------------===//
 
 #include "dublin/Dublin/dublin.h"
-#include <stdio.h>
-
+#include <iostream>
 
 
 /// Implements "Hello World" in Irish.
-__attribute__((visibility("default")))
-void _dublin_hello_world() {
-  puts("Dia daoibh, a dhomhain!\n");
+extern "C" void _dublin_hello_world() {
+  std::cout << "Dia daoibh, a dhomhain!" << std::endl;
 }
