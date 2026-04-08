@@ -80,6 +80,9 @@ option(DUBLIN_BUILD_TESTS "Build Dublin unit tests" OFF)
 option(DUBLIN_INCLUDE_TESTS "Generate build targets for tests" "${LLVM_INCLUDE_TESTS}")
 set(DUBLIN_TEST_C_COMPILER "${CMAKE_C_COMPILER}" CACHE PATH "Compiler to use for end-to-end tests")
 
+option(DUBLIN_BUILD_DOCS "Build documentation" "${LLVM_BUILD_DOCS}")
+option(DUBLIN_INCLUDE_DOCS "Generate build targets for tests" "${LLVM_INCLUDE_DOCS}")
+
 
 ###################
 # Build Artifacts #
@@ -98,3 +101,7 @@ if (DUBLIN_INCLUDE_TESTS)
 else ()
   add_custom_target(check-dublin)
 endif()
+
+if (DUBLIN_INCLUDE_DOCS)
+  add_subdirectory(docs)
+endif ()
