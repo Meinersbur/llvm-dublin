@@ -7,3 +7,6 @@
 #===------------------------------------------------------------------------===#
 
 add_subdirectory(dublin-hello)
+add_subdirectory(dublin-openmp)
+add_subdirectory(dublin-hip)
+add_subdirectory(dublin-cuda)

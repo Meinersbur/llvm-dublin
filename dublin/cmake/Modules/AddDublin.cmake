@@ -126,6 +126,10 @@ function (add_dublin_library name)
 
   foreach (tgtname IN LISTS alltargets)
     target_include_directories(${tgtname} PUBLIC "${DUBLIN_SOURCE_DIR}/include")
+
+    if (DUBLIN_OFFLOAD_BUILD)
+      target_compile_options(${tgtname} PRIVATE -fgpu-rdc -nogpulib -fno-exceptions -flto)
+    endif ()
   endforeach ()
 
   foreach (tgtname IN LISTS libtargets)

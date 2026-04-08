@@ -11,3 +11,7 @@ include(AddDublin)
 add_dublin_library(dublin STATIC SHARED
   dublin.c
 )
+
+if (TARGET dublin.static )
+  target_compile_options(dublin.static PUBLIC -fvisibility=default)
+endif ()

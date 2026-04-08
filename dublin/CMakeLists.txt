@@ -45,6 +45,17 @@ if (NOT LLVM_RUNTIMES_BUILD)
 endif ()
 
 
+############################
+# Build Mode Introspection #
+############################
+
+if (LLVM_DEFAULT_TARGET_TRIPLE MATCHES "^amdgcn|^nvptx|^spirv64" OR CMAKE_CXX_COMPILER_TARGET MATCHES "^amdgcn|^nvptx|^spirv64")
+  set(DUBLIN_OFFLOAD_BUILD ON)
+else ()
+  set(DUBLIN_OFFLOAD_BUILD OFF)
+endif ()
+
+
 get_toolchain_library_subdir(toolchain_lib_subdir)
 if (LLVM_TREE_AVAILABLE)
   get_clang_resource_dir(DUBLIN_OUTPUT_RESOURCE_DIR PREFIX "${LLVM_LIBRARY_OUTPUT_INTDIR}/..")
@@ -70,7 +81,11 @@ cmake_path(NORMAL_PATH DUBLIN_INSTALL_RESOURCE_LIB_PATH)
 #################
 
 option(DUBLIN_ENABLE_STATIC "Build libdublin.a" ON)
-option(DUBLIN_ENABLE_SHARED "Build libdublin.so" ON)
+set(DUBLIN_ENABLE_SHARED_default ON)
+if (DUBLIN_OFFLOAD_BUILD)
+  set(DUBLIN_ENABLE_SHARED_default OFF)
+endif ()
+option(DUBLIN_ENABLE_SHARED "Build libdublin.so" "${DUBLIN_ENABLE_SHARED_default}")
 
 
 option(DUBLIN_BUILD_EXAMPLES "Build examples" OFF)

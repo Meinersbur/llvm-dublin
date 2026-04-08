@@ -7,17 +7,20 @@
 //===----------------------------------------------------------------------===//
 ///
 /// \file
-/// Implementation of the Dublin library.
+/// Demonstration of using target offloading in the LLVM build system.
 ///
 //===----------------------------------------------------------------------===//
 
-#include "dublin/Dublin/dublin.h"
-#include <stdio.h>
+#include <stdlib.h>
 
+#pragma omp declare target
+void _dublin_hello_world(void);
+#pragma omp end declare target
 
-
-/// Implements "Hello World" in Irish.
-__attribute__((visibility("default")))
-void _dublin_hello_world() {
-  puts("Dia daoibh, a dhomhain!\n");
+int main() {
+  #pragma omp target
+  {
+    _dublin_hello_world();
+  }
+  return EXIT_SUCCESS;
 }

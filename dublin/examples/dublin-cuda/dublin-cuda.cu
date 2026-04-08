@@ -7,17 +7,20 @@
 //===----------------------------------------------------------------------===//
 ///
 /// \file
-/// Implementation of the Dublin library.
+/// Demonstration of using CUDA in the LLVM build system.
 ///
 //===----------------------------------------------------------------------===//
 
-#include "dublin/Dublin/dublin.h"
-#include <stdio.h>
+extern "C"
+__device__ void _dublin_hello_world();
 
+__global__ void hello_world_kernel()
+{
+    _dublin_hello_world();
+}
 
-
-/// Implements "Hello World" in Irish.
-__attribute__((visibility("default")))
-void _dublin_hello_world() {
-  puts("Dia daoibh, a dhomhain!\n");
+int main()
+{
+    hello_world_kernel<<<1, 1>>>();
+    cudaDeviceSynchronize();
 }
