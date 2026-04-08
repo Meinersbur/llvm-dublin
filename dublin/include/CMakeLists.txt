@@ -6,16 +6,10 @@
 #
 #===------------------------------------------------------------------------===#
 
-add_library(dublin
-    dublin.c
-  )
+add_llvm_install_targets(install-dublin-headers)
 
-target_include_directories(dublin PUBLIC "${DUBLIN_SOURCE_DIR}/include")
-set_target_properties(dublin
-  PROPERTIES
-    ARCHIVE_OUTPUT_DIRECTORY "${DUBLIN_OUTPUT_RESOURCE_LIB_DIR}"
-)
-
-install(TARGETS dublin
-  ARCHIVE DESTINATION "${DUBLIN_INSTALL_RESOURCE_LIB_PATH}"
+install(DIRECTORY .
+  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+  FILES_MATCHING
+    PATTERN "*.h"
 )
