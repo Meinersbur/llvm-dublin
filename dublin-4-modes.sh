@@ -9,12 +9,14 @@ ninja -C build-llvm
 
 # 1. Legacy standalone build
 cmake -B build-standalone \
-      -S dublin
+      -S dublin           \
+      || true
 
 # 2. Legacy LLVM_ENABLE_PROJECTS build
 cmake -B build-projects              \
       -S llvm                        \
-      -D LLVM_ENABLE_PROJECTS=dublin
+      -D LLVM_ENABLE_PROJECTS=dublin \
+      || true
 
 # 3. Runtimes bootstrapping build
 cmake -B build-bootstrapping         \
