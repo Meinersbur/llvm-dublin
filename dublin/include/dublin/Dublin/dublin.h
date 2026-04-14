@@ -14,6 +14,14 @@
 #ifndef DUBLIN_DUBLIN_H_
 #define DUBLIN_DUBLIN_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void _dublin_hello_world(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // DUBLIN_DUBLIN_H_

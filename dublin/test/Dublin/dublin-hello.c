@@ -1,4 +1,4 @@
-// RUN: %cc -I "%dublin_source_dir/include" -L "%dublin_binary_dir/lib/Dublin" %s -ldublin -o %t.exe
+// RUN: %cc -I "%dublin_source_dir/include" -L "%dublin_binary_dir/lib" %s -ldublin -o %t.exe
 // RUN: %t.exe | FileCheck %s
 
 // CHECK: Dia daoibh, a dhomhain!
