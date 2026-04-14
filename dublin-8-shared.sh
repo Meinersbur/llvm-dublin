@@ -32,7 +32,7 @@ cd build-runtimes-static
 ninja dublin-hello
 find -name "libdublin.*"
 LD_DEBUG=libs bin/dublin-hello
-ninja dublin.shared
+ninja dublin.static
 find -name "libdublin.*"
 cd ..
 
