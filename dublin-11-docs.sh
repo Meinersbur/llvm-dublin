@@ -8,13 +8,14 @@ cmake -B build-llvm                       \
 ninja -C build-llvm
 
 # Runtimes build
-cmake -B build-runtimes              \
-      -S runtimes                    \
-      -D LLVM_BINARY_DIR="`pwd`/build-llvm"  \
-      -D LLVM_ENABLE_RUNTIMES=dublin  \
-      -D DUBLIN_INCLUDE_DOCS=ON \
-      -D DUBLIN_BUILD_DOCS=ON \
-      -D DUBLIN_ENABLE_SPHINX=ON
+cmake -B build-runtimes                     \
+      -S runtimes                           \
+      -D LLVM_BINARY_DIR="`pwd`/build-llvm" \
+      -D LLVM_ENABLE_RUNTIMES=dublin        \
+      -D DUBLIN_INCLUDE_DOCS=ON             \
+      -D DUBLIN_BUILD_DOCS=ON               \
+      -D LLVM_ENABLE_SPHINX=ON              \
+      -D LLVM_BUILD_DOCS=ON  
 
 
 cd build-runtimes
