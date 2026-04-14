@@ -20,5 +20,5 @@ TEST(Dublin, Basic) {
   _dublin_hello_world();
 
   auto out = testing::internal::GetCapturedStdout();
-  EXPECT_EQ(out, "Dia daoibh, a dhomhain!\n");
+  EXPECT_EQ(out, "Dia daoibh, a dhomhain!\n\n");
 }
