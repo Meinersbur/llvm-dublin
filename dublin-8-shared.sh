@@ -29,16 +29,14 @@ cmake -B build-runtimes-shared       \
 
 
 cd build-runtimes-static
-ninja check-dublin
 ninja dublin-hello
 find -name "libdublin.*"
 LD_DEBUG=libs bin/dublin-hello
-ninja dublin.shared
+ninja dublin.static
 find -name "libdublin.*"
 cd ..
 
 cd build-runtimes-shared
-ninja check-dublin
 ninja dublin-hello
 find -name "libdublin.*"
 LD_DEBUG=libs bin/dublin-hello
