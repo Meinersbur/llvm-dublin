@@ -11,3 +11,7 @@ cd build-bootstrap
 ninja check-dublin
 ninja -C runtimes/runtimes-bins dublin-hello
 bin/dublin-hello
+
+ninja check-compiler-rt
+ninja check-dublin
+
